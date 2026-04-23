@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.1">
+
+<title>Bastarkala Website</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ✅ DEFAULT SMALL VIEW */
+.container {
+    font-size: 90%;
+}
+
+/* Accessibility */
+#big:checked ~ .container { font-size: 110%; }
+#small:checked ~ .container { font-size: 90%; }
+
+/* Header */
+.mainheader {
+    text-align: center;
+    background-color: #d4cf9b;
+    padding: 2px;
+    font-style: italic;
+}
+
+.mainheader h3 {
+    font-size: 16px;
+    margin: 3px 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6e1b3;
+    padding: 5px 10px;
+}
+
+.logo img {
+    height: 45px;
+}
+
+/* Search */
+.search {
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.search input {
+    padding: 8px;
+    width: 420px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.search button {
+    padding: 8px;
+    margin-left: 5px;
+    border: none;
+    background-color: #d4cf9b;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search button:hover {
+    background-color: #bfb97a;
+}
+
+/* Accessibility Buttons */
+.accessibility {
+    display: flex;
+    gap: 5px;
+}
+
+.accessibility label {
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+label[for="big"] { background: red; }
+label[for="small"] { background: green; }
+
+/* User */
+.user {
+    font-size: 14px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #d4cf9b;
+    padding: 8px;
+}
+
+.navbar a {
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Hover */
+a {
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+/* Slider */
+.banner {
+    overflow: hidden;
+    width: 100%;
+}
+
+
+/* Footer */
+.last-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e6e1b3;
+    padding: 2px;
+    
+}
+
+.box {
+    width: 30%;
+}
+
+.box a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    margin: 2px 0;
+}
+
+/* Icons */
+.fa-facebook { color: #1877f2; }
+.fa-instagram { color: #e4405f; }
+.fa-youtube { color: red; }
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .last-section {
+        flex-direction: column;
+    }
+
+    .box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+/* Login Section */
+.login-container {
+    width: 100%;
+    height: 400px;
+    background-color: #ecece9;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.login-box {
+    width: 400px;
+    background-color: #e6e1b3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Heading */
+.login-box h2 {
+    text-align: left;
+    border-bottom: 2px solid gray;
+    padding-bottom: 5px; 
+}
+
+/* Input group */
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.input-group label {
+    width: 120px;
+}
+
+.input-group input {
+    width: 200px;
+    padding: 8px;
+    border: none;
+    background-color: #f5f4f4;
+    border-radius: 7px;
+}
+
+
+/* Button */
+.login-btn {
+    text-align: right;
+    margin-top: 10px;
+
+}
+
+.login-btn button {
+    padding: 6px 15px;
+    border: none;
+    background-color: #d4cf9b;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.login-btn button:hover {
+    background-color: #777;
+}
+
+/* Register text */
+.register-text {
+    text-align: right;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.register-text a {
+    color: olive;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ✅ DEFAULT SMALL SELECTED -->
+<input type="radio" name="font" id="small" checked hidden>
+<input type="radio" name="font" id="big" hidden>
+
+<div class="container">
+
+<!-- Header Text -->
+<div class="mainheader">
+    <h3>BRING THE SOUL OF BASTAR TO YOUR HOME</h3>
+</div>
+
+<!-- Header -->
+<div class="header">
+
+    <div class="logo">
+        <img src="Logo.jpg">
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Search">
+        <button>Search</button>
+    </div>
+
+    <div class="user">
+        <p style="margin:0;">Hello, User!</p>
+        <a href="login.html">Sign In</a>
+    </div>
+
+    <div class="accessibility">
+        <label for="big">A+</label>
+        <label for="small">A-</label>
+    </div>
+
+</div>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="Products.html">Products</a>
+    <a href="carts.html">Cart</a>
+    <a href="Contact_detail.html">Contact</a>
+    <a href="buyer_registration.html">Registration/Forgot Password</a>
+</div>
+
+<!-- login -->
+
+<div class="login-container">
+    <div class="login-box">
+        <h2>Login</h2>
+        <form>
+            <div class="input-group-usertype">
+                <label>User type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="radio" name="user_type" required>Buyer
+                <input type="radio" name="user_type" required>Seller/Administrator
+            </div>
+            <div class="input-group">
+                <label>User Name</label>
+               <input type="email" placeholder="Enter your Email id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&]).{8,}"
+       title="Password must be at least 8 characters, include uppercase, lowercase, number and special character" required>
+            </div>
+            <div class="login-btn">
+                <button type="submit">Login</button>
+            </div>
+            <p class="register-text">
+                Not account? <a href="buyer_registration.html">Register here</a>
+            </p>
+            <p class="register-text">
+                 <a href="Forgot_password.html">Forgot password?</a>
+            </p>
+            <h2> </h2>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Footer -->
+<div class="last-section">
+
+    <div class="box">
+        <h3>Follow Us</h3>
+        <a href="#"><i class="fa-brands fa-facebook"></i> bastarkala_fb</a><br>
+        <a href="#"><i class="fa-brands fa-instagram"></i> bastarkala_insta</a><br>
+        <a href="#"><i class="fa-brands fa-youtube"></i> bastarkala_yt</a>
+    </div>
+
+    <div class="box">
+        <h3>About this Page</h3>
+        <p class="about-text">
+            Bastarkala is more than just marketplace, it is a bridge 
+            between the tribal heartland of Chhattisgarh and your modern home.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>Address</h3>
+        <p>
+            24, C Block, Sector 5<br>
+            New Raipur Chhattisgarh<br>
+            Phone: 9669456677, Email: bastarkala@gmail.com
+        </p>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

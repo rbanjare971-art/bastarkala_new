@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- 110% Zoom Effect -->
+<meta name="viewport" content="width=device-width, initial-scale=1.1">
+
+<title>Bastarkala Website</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+
+/* Full Screen + Zoom */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial;
+    font-size: 110%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Accessibility */
+#big:checked ~ .container { font-size: 130%; }
+#small:checked ~ .container { font-size: 90%; }
+
+/* Main Header */
+.mainheader {
+    text-align: center;
+    background-color: #d4cf9b;
+    padding: 2px;
+    font-style: italic;
+}
+
+.mainheader h3 {
+    font-size: 16px;
+    margin: 3px 0;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6e1b3;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+/* Logo */
+.logo img {
+    height: 45px;
+}
+
+/* Search */
+.search {
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.search input {
+    padding: 8px;
+    width: 420px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.search button {
+    padding: 8px 8px;
+    margin-left: 5px;
+    border: none;
+    background-color: #d4cf9b;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search button:hover {
+    background-color: #bfb97a;
+}
+
+/* Accessibility Buttons */
+.accessibility {
+    display: flex;
+    gap: 5px;
+}
+
+.accessibility label {
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+}
+
+/* A+ Red */
+label[for="big"] {
+    background-color: red;
+}
+
+/* A- Green */
+label[for="small"] {
+    background-color: green;
+}
+
+/* User */
+.user {
+    font-size: 14px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #d4cf9b;
+    padding: 8px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.navbar a {
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Banner */
+.banner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Footer Section */
+.last-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e6e1b3;
+    padding: 8px;
+    width: 100%;
+}
+
+.box {
+    width: 30%;
+}
+
+.box h3 {
+    margin: 5px 0;
+}
+
+.box p {
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+.about-text {
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .last-section {
+        flex-direction: column;
+    }
+
+    .box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    a {
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+.box a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    margin: 5px 0;
+    
+}
+
+.box a:hover {
+    text-decoration: underline;
+}
+
+/* Icon Colors */
+.fa-facebook { color: #1877f2; }
+.fa-instagram { color: #e4405f; }
+.fa-youtube { color: red; }
+
+</style>
+</head>
+
+<body>
+
+<!-- Hidden Controls -->
+<input type="radio" name="font" id="normal" checked hidden>
+<input type="radio" name="font" id="big" hidden>
+<input type="radio" name="font" id="small" hidden>
+
+<div class="container">
+
+<!-- Main Header -->
+<div class="mainheader">
+    <h3>BRING THE SOUL OF BASTAR TO YOUR HOME</h3>
+</div>
+
+<!-- Header -->
+<div class="header">
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="Logo.jpg" alt="Logo">
+    </div>
+
+    <!-- Search -->
+    <div class="search">
+        <input type="text" placeholder="Search">
+        <button>Search</button>
+    </div>
+
+       <!-- User -->
+    <div class="user">
+        <p style="margin:0;">Hello, User!</p>
+        <a href="#">Sign In</a>
+    </div>
+
+    <!-- Accessibility -->
+    <div class="accessibility">
+        <label for="big">A+</label>
+        <label for="small">A-</label>
+    </div>
+
+ 
+
+</div>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Cart</a>
+    <a href="#">Contact</a>
+    <a href="#">Registration/Forgot Password</a>
+</div>
+
+<!-- Banner -->
+<div class="banner">
+    <img src="Main_photo Home Page.jpeg" alt="Bastar Art">
+</div>
+
+<!-- Footer Section -->
+<div class="last-section">
+
+    <div class="box">
+    <h3>Follow Us</h3>
+
+    <p>
+        <a href="#">
+            <i class="fa-brands fa-facebook"></i> <b>bastarkala_fb</b>
+        </a><br>
+
+        <a href="#">
+            <i class="fa-brands fa-instagram"></i>  <b>bastarkala_insta</b>
+        </a><br>
+
+        <a href="#">
+            <i class="fa-brands fa-youtube"></i>  <b>bastarkala_yt</b>
+        </a>
+    </p>
+</div>
+
+    <div class="box">
+        <h3>About this Page</h3>
+        <p class="about-text">
+            Bastarkala is more than just marketplace, it is a bridge 
+            between the tribal heartland of Chhattisgarh and your modern home.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>Address</h3>
+        <i><p>
+            24, C Block, Sector 5<br>
+            New Raipur Chhattisgarh<br>
+            Phone: 9669456677, Email: bastarkala@gmail.com </p>
+        </i>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

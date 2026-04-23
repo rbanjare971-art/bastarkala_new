@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bastarkala Products</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f5ef;
+}
+
+/* HEADER */
+.mainheader {
+    text-align: center;
+    background-color: #d4cf9b;
+    padding: 2px;
+    font-style: italic;
+}
+
+.mainheader h3 {
+    font-size: 16px;
+    margin: 3px 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6e1b3;
+    padding: 5px 10px;
+}
+
+.logo img {
+    height: 45px;
+}
+
+/* Search */
+.search {
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+}
+
+.search input {
+    padding: 8px;
+    width: 420px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.search button {
+    padding: 8px;
+    margin-left: 5px;
+    border: none;
+    background-color: #d4cf9b;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search button:hover {
+    background-color: #bfb97a;
+}
+
+.user a{
+margin-left:20px;
+text-decoration:none;
+color:black;
+}
+
+#cartCount{
+background:red;
+color:white;
+padding:3px 8px;
+border-radius:50%;
+font-size:12px;
+}
+
+
+
+/* Navbar */
+
+.navbar {
+    background-color: #d4cf9b;
+    padding: 8px;
+}
+
+.navbar a {
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
+a:hover {
+    text-decoration: underline;
+    color: rgb(61, 9, 202);
+    cursor: pointer;
+}
+/* PAGE */
+.product-page{
+display:flex;
+padding:20px;
+gap:30px;
+}
+
+/* FILTER */
+.filter-panel{
+width:230px;
+background:#ddd8b0;
+padding:15px;
+border-radius:8px;
+position:sticky;
+top:20px;
+height:fit-content;
+}
+
+.filter-panel label{
+display:block;
+margin:12px 0;
+}
+
+.filter-panel input[type=range]{
+width:100%;
+}
+
+.filter-buttons{
+margin-top:20px;
+display:flex;
+gap:10px;
+}
+
+.filter-buttons button{
+padding:8px 15px;
+border:none;
+background:#d4cf9b;
+cursor:pointer;
+}
+
+/* PRODUCTS */
+.product-area{
+flex:1;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.product-card{
+background:white;
+border-radius:15px;
+padding:10px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+cursor:pointer;
+}
+
+.product-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.product-card h3{
+margin:8px 0 5px;
+}
+
+.product-card p{
+margin:4px;
+font-size:13px;
+}
+
+.stock{
+font-size:13px;
+font-weight:bold;
+color:green;
+margin-top:4px;
+}
+
+.price{
+display:block;
+font-size:20px;
+font-weight:bold;
+color:#4a29ff;
+margin-top:6px;
+}
+
+.product-card a{
+display:inline-block;
+margin-top:8px;
+text-decoration:none;
+font-weight:bold;
+color:#8a7b28;
+}
+
+/* POPUP */
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+z-index:999;
+}
+
+/* Compact Popup */
+.popup-box{
+background:white;
+width:340px;
+padding:12px;
+border-radius:12px;
+margin:40px auto;
+text-align:center;
+position:relative;
+line-height:1.2;
+}
+
+/* Close icon */
+.close{
+top:6px;
+right:14px;
+font-size:24px;
+}
+
+/* Product image smaller */
+.popup-box img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:8px;
+}
+
+/* Heading smaller */
+.popup-box h2{
+font-size:18px;
+margin:6px 0;
+}
+
+.popup-box p{
+font-size:13px;
+margin:4px 0;
+}
+
+.popup-box h3{
+font-size:16px;
+margin:6px 0;
+}
+
+/* Quantity box */
+#qty{
+width:55px !important;
+padding:4px !important;
+margin:6px !important;
+font-size:13px;
+}
+
+/* Button compact */
+.cart-btn{
+padding:8px 14px;
+font-size:13px;
+margin-top:8px;
+}
+
+.close{
+position:absolute;
+top:10px;
+right:20px;
+font-size:30px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.popup-box img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.cart-btn{
+padding:10px 20px;
+border:none;
+background:#d4cf9b;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* FOOTER
+.last-section{
+display:flex;
+justify-content:space-between;
+background:#e6e1b3;
+padding:20px;
+margin-top:30px;
+} */
+/* Footer */
+.last-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e6e1b3;
+    padding: 2px;
+    
+}
+
+.box{
+width:30%;
+}
+
+@media(max-width:900px){
+
+.product-page{
+flex-direction:column;
+}
+
+.filter-panel{
+width:100%;
+position:static;
+}
+
+.product-area{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="mainheader">
+<h3>BRING THE SOUL OF BASTAR TO YOUR HOME</h3>
+</div>
+
+<div class="header">
+
+<div class="logo">
+<img src="Logo.jpg">
+</div>
+
+<div class="search">
+<input
+type="text"
+id="searchBox"
+placeholder="Search product or description"
+onkeyup="if(event.key==='Enter'){searchProducts()}">
+<button onclick="searchProducts()">
+Search
+</button>
+</div>
+
+<div class="user">
+
+Hello User! <br>
+
+<a href="login.html">
+Sign In
+</a>
+
+<a href="carts.html">
+<i class="fa fa-shopping-cart"></i>
+<span id="cartCount">0</span>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="Products.html">Products</a>
+    <a href="carts.html">Cart</a>
+    <a href="Contact_detail.html">Contact</a>
+    <a href="buyer_registration.html">Registration/Forgot Password</a>
+</div>
+
+
+
+<div class="product-page">
+
+<!-- FILTER -->
+<aside class="filter-panel">
+
+<h3>Customize Search</h3>
+
+<h4>Price</h4>
+
+<input id="priceRange"
+type="range"
+min="500"
+max="10000"
+value="5000">
+
+<div>
+Selected ₹<span id="priceValue">5000</span>
+</div>
+
+
+<h4>Art Type</h4>
+
+<label>
+<input type="checkbox" value="metal">
+Bell Metal
+</label>
+
+<label>
+<input type="checkbox" value="wood">
+Wood Craft
+</label>
+
+<label>
+<input type="checkbox" value="painting">
+Painting
+</label>
+
+
+<div class="filter-buttons">
+
+<button id="filterBtn">
+Filter
+</button>
+
+<button id="removeBtn">
+Remove
+</button>
+
+</div>
+
+</aside>
+
+
+<!-- PRODUCTS -->
+<section class="product-area">
+
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="4999"
+data-category="metal"
+data-stock="10">
+
+<img src="image_home_page/image 2.webp">
+
+<h3>King With Elephant</h3>
+
+<p>Bell metal handmade decor</p>
+
+<div class="stock">
+Available: 10
+</div>
+
+<span class="price">
+₹4999
+</span>
+
+<a href="#"
+onclick="event.stopPropagation(); addToCart(event);">
+Add To Cart
+</a>
+
+</div>
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="7999"
+data-category="metal"
+data-stock="6">
+
+<img src="image_home_page/image 3.webp">
+
+<h3>King And Queen</h3>
+
+<p>Traditional tribal metal art</p>
+
+<div class="stock">
+Available: 6
+</div>
+
+<span class="price">
+₹7999
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="2599"
+data-category="wood"
+data-stock="15">
+
+<img src="image_home_page/image 4.webp">
+
+<h3>Wood Craft</h3>
+
+<p>Hand carved Bastar craft</p>
+
+<div class="stock">
+Available: 15
+</div>
+
+<span class="price">
+₹2599
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+
+
+
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="1999"
+data-category="painting"
+data-stock="8">
+
+<img src="image_home_page/image 5.webp">
+
+<h3>Tribal Painting</h3>
+
+<p>Traditional Gond painting</p>
+
+<div class="stock">
+Available: 8
+</div>
+
+<span class="price">
+₹1999
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="4000"
+data-category="painting"
+data-stock="8">
+
+<img src="image_home_page/image 6.webp">
+
+<h3>Tribal Arts/h3>
+
+<p>Traditional Gond painting</p>
+
+<div class="stock">
+Available: 60
+</div>
+
+<span class="price">
+₹4000
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="2500"
+data-category="painting"
+data-stock="8">
+
+<img src="image_home_page/image 7.webp">
+
+<h3>Tribal arts</h3>
+
+<p>Traditional Gond painting</p>
+
+<div class="stock">
+Available: 80
+</div>
+
+<span class="price">
+₹2500
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="2100"
+data-category="painting"
+data-stock="8">
+
+<img src="image_home_page/image 8.webp">
+
+<h3>Tribal ats</h3>
+
+<p>Traditional Gond painting</p>
+
+<div class="stock">
+Available: 45
+</div>
+
+<span class="price">
+₹2100
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="9000"
+data-category="painting"
+data-stock="8">
+
+<img src="image_home_page/image 9.webp">
+
+<h3>Tribal Painting</h3>
+
+<p>Traditional Gond painting</p>
+
+<div class="stock">
+Available: 8
+</div>
+
+<span class="price">
+₹9000
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="1999"
+data-category="painting"
+data-stock="8">
+
+<img src="image_home_page/image 10.webp">
+
+<h3>Tribal Painting</h3>
+
+<p>Traditional Gond painting</p>
+
+<div class="stock">
+Available: 98
+</div>
+
+<span class="price">
+₹1999
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="500"
+data-category="painting"
+data-stock="8">
+
+<img src="image_home_page/image 11.webp">
+
+<h3>Tribal Painting</h3>
+
+<p>Traditional Gond painting</p>
+
+<div class="stock">
+Available: 18
+</div>
+
+<span class="price">
+₹500
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="6700"
+data-category="painting"
+data-stock="8">
+
+<img src="image_home_page/image 12.webp">
+
+<h3>Tribal Painting</h3>
+
+<p>Traditional Gond painting</p>
+
+<div class="stock">
+Available: 8
+</div>
+
+<span class="price">
+₹6700
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+<div class="product-card"
+onclick="showPopup(this)"
+data-price="1999"
+data-category="painting"
+data-stock="8">
+
+<img src="image_home_page/image 5.webp">
+
+<h3>Tribal Painting</h3>
+
+<p>Traditional Gond painting</p>
+
+<div class="stock">
+Available: 8
+</div>
+
+<span class="price">
+₹1999
+</span>
+
+<a href="#"
+onclick="addToCart(event)">
+Add To Cart
+</a>
+
+</div>
+</section>
+
+</div>
+
+
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+
+<div class="popup-box">
+
+<span class="close"
+onclick="closePopup()">×</span>
+
+<img id="popImg">
+
+<h2 id="popName"></h2>
+
+<p id="popDesc"></p>
+
+<h3 id="popPrice"></h3>
+
+<p>
+Available :
+<span id="stockQty">
+0
+</span>
+Pieces
+</p>
+
+<label>
+Quantity:
+</label>
+
+<input
+type="number"
+id="qty"
+value="1"
+min="1"
+style="
+width:70px;
+padding:8px;
+margin:10px;"
+oninput="updateTotal()">
+
+<h3>
+Total :
+<span id="totalPrice">
+₹0
+</span>
+</h3>
+
+<button
+class="cart-btn"
+onclick="addPopupToCart()">
+
+Add To Cart
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- Footer -->
+<div class="last-section">
+
+    <div class="box">
+        <h3>Follow Us</h3>
+        <a href="#"><i class="fa-brands fa-facebook"></i> bastarkala_fb</a><br>
+        <a href="#"><i class="fa-brands fa-instagram"></i> bastarkala_insta</a><br>
+        <a href="#"><i class="fa-brands fa-youtube"></i> bastarkala_yt</a>
+    </div>
+
+    <div class="box">
+        <h3>About this Page</h3>
+        <p class="about-text">
+            Bastarkala is more than just marketplace, it is a bridge 
+            between the tribal heartland of Chhattisgarh and your modern home.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>Address</h3>
+        <p>
+            24, C Block, Sector 5<br>
+            New Raipur Chhattisgarh<br>
+            Phone: 9669456677, Email: bastarkala@gmail.com
+        </p>
+    </div>
+</div>
+<script>
+
+let cart=0;
+let currentPrice=0;
+
+
+/* FILTER */
+const slider=
+document.getElementById("priceRange");
+
+const priceValue=
+document.getElementById("priceValue");
+
+const cards=
+document.querySelectorAll(".product-card");
+
+
+slider.addEventListener(
+"input",
+function(){
+
+priceValue.innerText=
+this.value;
+
+}
+);
+
+
+
+document.getElementById(
+"filterBtn"
+).onclick=function(){
+
+let maxPrice=
+parseInt(
+slider.value
+);
+
+let checked=[];
+
+document
+.querySelectorAll(
+'.filter-panel input[type="checkbox"]:checked'
+)
+
+.forEach(function(box){
+
+checked.push(
+box.value
+);
+
+});
+
+
+cards.forEach(function(card){
+
+let p=
+parseInt(
+card.dataset.price
+);
+
+let c=
+card.dataset.category;
+
+if(
+p<=maxPrice &&
+(
+checked.length===0 ||
+checked.includes(c)
+)
+)
+
+card.style.display="block";
+
+else
+
+card.style.display="none";
+
+});
+
+};
+
+
+
+document.getElementById(
+"removeBtn"
+).onclick=function(){
+
+slider.value=5000;
+
+priceValue.innerText=5000;
+
+document
+.querySelectorAll(
+'.filter-panel input[type="checkbox"]'
+)
+.forEach(
+x=>x.checked=false
+);
+
+cards.forEach(
+x=>x.style.display="block"
+);
+
+};
+
+
+
+/* POPUP */
+function showPopup(card){
+
+document.getElementById(
+"popup"
+).style.display="block";
+
+document.getElementById(
+"popImg"
+).src=
+card.querySelector("img").src;
+
+document.getElementById(
+"popName"
+).innerText=
+card.querySelector("h3").innerText;
+
+document.getElementById(
+"popDesc"
+).innerText=
+card.querySelector("p").innerText;
+
+let priceText=
+card.querySelector(".price")
+.innerText;
+
+document.getElementById(
+"popPrice"
+).innerText=
+priceText;
+
+currentPrice=
+parseInt(
+priceText.replace("₹","")
+);
+
+document.getElementById(
+"stockQty"
+).innerText=
+card.dataset.stock;
+
+document.getElementById(
+"qty"
+).value=1;
+
+updateTotal();
+
+}
+
+
+
+function closePopup(){
+
+document.getElementById(
+"popup"
+).style.display="none";
+
+}
+
+
+
+/* Quantity price */
+function updateTotal(){
+
+let q=
+parseInt(
+document.getElementById(
+"qty"
+).value
+);
+
+let total=
+currentPrice*q;
+
+document.getElementById(
+"totalPrice"
+).innerText=
+"₹"+total;
+
+}
+
+
+
+/* Add To Cart from popup */
+function addPopupToCart(){
+
+let q=
+parseInt(
+document.getElementById(
+"qty"
+).value
+);
+
+cart=cart+q;
+
+document.getElementById(
+"cartCount"
+).innerText=cart;
+
+alert(
+q+" item added to cart"
+);
+
+closePopup();
+
+}
+
+function addToCart(e){
+
+e.preventDefault();
+e.stopPropagation();
+
+let card = e.target.closest(".product-card");
+
+let name = card.querySelector("h3").innerText;
+let price = parseInt(card.querySelector(".price").innerText.replace("₹",""));
+let img = card.querySelector("img").src;
+
+let cartItems =
+JSON.parse(localStorage.getItem("cartItems")) || [];
+
+let found = false;
+
+cartItems.forEach(function(item){
+
+if(item.name==name){
+item.qty++;
+found=true;
+}
+
+});
+
+if(!found){
+
+cartItems.push({
+name:name,
+price:price,
+qty:1,
+img:img
+});
+
+}
+
+localStorage.setItem(
+"cartItems",
+JSON.stringify(cartItems)
+);
+
+updateCartCount();
+
+alert("Product Added To Cart");
+
+}
+
+function updateCartCount(){
+
+let cartItems=
+JSON.parse(localStorage.getItem("cartItems")) || [];
+
+let totalQty=0;
+
+cartItems.forEach(function(item){
+totalQty += item.qty;
+});
+
+document.getElementById(
+"cartCount"
+).innerText = totalQty;
+
+}
+
+window.onload=updateCartCount;
+
+ 
+/* SEARCH FILTER */
+function searchProducts(){
+
+let keyword=
+document.getElementById(
+"searchBox"
+).value.toLowerCase().trim();
+
+cards.forEach(function(card){
+
+let productName=
+card.querySelector("h3")
+.innerText
+.toLowerCase();
+
+let desc=
+card.querySelector("p")
+.innerText
+.toLowerCase();
+
+
+if(
+productName.includes(keyword) ||
+desc.includes(keyword) ||
+keyword==""
+){
+card.style.display=
+"block";
+}
+
+else{
+
+card.style.display=
+"none";
+
+}
+
+});
+
+}
+</script>
+
+</body>
+</html>
